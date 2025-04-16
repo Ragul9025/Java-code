@@ -1,0 +1,134 @@
+package Task;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class daily1 
+{
+
+	public static void main(String[] args) 
+	{
+		//Add element specific index
+		
+  	int arr[]= {1,2,3,4};
+		System.out.println("before");
+		System.out.println(Arrays.toString(arr));
+		arr[3]=10;
+		System.out.println("After");
+		System.out.println(Arrays.toString(arr));
+		int a=0;
+		int b=0;
+      while(a!=arr.length)
+      {
+    	  b+=arr[a];
+    	  a++;
+      }
+      System.out.println(b);
+  	System.out.println("old value in array :" );
+  	System.out.println(Arrays.toString(arr));
+       Scanner scan=new Scanner (System.in);
+       System.out.println("What is the position you want to change :");
+       int a =scan.nextInt();
+       System.out.println("enter the element :");
+       arr[a]=scan.nextInt();
+       System.out.println("After change : ");
+       System.out.println(Arrays.toString(arr));
+  	
+  	String a[]= {"CAT","fox","cat","Dog","dog","lion","dog","cat"};
+  	int count=0;
+  	for(int i=0;i<a.length;i++)
+  	{
+  		int c=0;
+  		String x=a[i].toLowerCase();
+  		for(int j=i+1;j<a.length;j++)
+  		{
+  	
+  			String y=a[j].toLowerCase();
+  			if(x.equals(y))
+  			{
+  				c++;
+  				a[i]="";
+  			}
+  		}
+  		if(c==0)
+  		{
+  			count++;
+  		}
+  	}
+
+	System.out.println(count);
+	System.out.println(Arrays.toString(a));
+	
+	String s="abcdefghyuv";
+	int k=3;
+	int num=s.length()/k;
+	String change="";
+	int h=k;
+	System.out.println(s);
+	for(int i=0;i<num;i++)
+	{
+		
+		for(int j=h-1;j>=h-k;j--)
+		{
+			change+=s.charAt(j);
+		}
+		h+=k;
+	}
+	System.out.println(change);
+
+	if(s.length()!=change.length())
+	{
+		for(int q=s.length()-1;q>=change.length()-2;q--)
+		{
+			change+=s.charAt(q);
+			
+		}
+	}
+	 System.out.println(change);
+	 
+	 
+	 //duplicate accurence
+	 int nums[]= {2,4,3,1,2,1,4,5,2,4,8,1};
+	 boolean b[]=new boolean[nums.length];
+	 //System.out.println(b[0]);
+	 for(int i=0;i<nums.length;i++)
+	 {
+		 if(b[i])
+		 {
+			 continue;
+		 }
+		 int c=1;
+		 for(int j=i+1;j<nums.length;j++)
+		 {
+			if(nums[i]==nums[j])
+			{
+				c++;
+				b[j]=true;
+			}
+		 }
+		
+			 System.out.println(nums[i]+" -> accurence -> "+c+" time");
+
+	 }
+	 
+	 int add[]= {1,2,3,4,5,6,7,8,99};
+	 int tot=0;
+	 System.out.println("How Many elements do you want to add :");
+	 int n=scan.nextInt();
+	
+	 for(int i=0;i<n;i++ )
+	 {
+		  System.out.println("Enter the specific index Do you want :"+(i+1));
+		  tot+= add[scan.nextInt()-1];
+	 }
+	 System.out.println(tot);
+
+	String str="absv!c,sc,123,244//|^][=-!!";
+	
+	str=str.replaceAll("[^a-z0-9]","");
+	System.out.println(str);
+	
+	}
+
+
+}
